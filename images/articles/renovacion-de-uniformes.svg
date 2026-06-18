@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Renovación de uniformes - Cleaned Services">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#004AAC"/>
+      <stop offset="1" stop-color="#003585"/>
+    </linearGradient>
+    <filter id="shadow" x="-20" y="-20" width="1240" height="715" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#001B44" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" rx="32" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="1020" cy="120" r="170" fill="white" fill-opacity="0.08"/>
+  <circle cx="1040" cy="140" r="110" fill="white" fill-opacity="0.08"/>
+  <circle cx="180" cy="560" r="220" fill="white" fill-opacity="0.06"/>
+
+  <!-- Simple shirt icon -->
+  <g filter="url(#shadow)" transform="translate(110 150)">
+    <rect x="0" y="0" width="420" height="420" rx="28" fill="white" fill-opacity="0.10"/>
+    <path d="M170 110 L210 80 L250 110 L290 95 L340 145 L310 175 L290 155 V330 C290 352 272 370 250 370 H170 C148 370 130 352 130 330 V155 L110 175 L90 145 L140 95 Z"
+          fill="white" fill-opacity="0.92"/>
+    <path d="M205 120 C205 145 225 162 250 162 C275 162 295 145 295 120"
+          stroke="#004AAC" stroke-width="12" stroke-linecap="round" fill="none" opacity="0.65"/>
+  </g>
+
+  <!-- Title -->
+  <g transform="translate(580 220)">
+    <text x="0" y="0" fill="white" font-family="Montserrat, Arial, sans-serif" font-size="54" font-weight="800">
+      Renovación de uniformes
+    </text>
+    <text x="0" y="66" fill="white" fill-opacity="0.92" font-family="Open Sans, Arial, sans-serif" font-size="28" font-weight="400">
+      Identidad y presencia en cada operación
+    </text>
+    <text x="0" y="122" fill="white" fill-opacity="0.78" font-family="Open Sans, Arial, sans-serif" font-size="22" font-weight="400">
+      Cleaned Services
+    </text>
+  </g>
+</svg>
+

@@ -1,0 +1,33 @@
+# Cleaned Services — https://www.cleaned.pe
+# Política permisiva: indexar contenido público; bloquear solo rutas que no aportan a búsqueda.
+
+User-agent: *
+Allow: /
+
+# Sitemap principal (lista todas las URLs públicas en PHP)
+Sitemap: https://www.cleaned.pe/sitemap.xml
+
+# Rastreadores de modelos / agregadores (si respetan Allow, pueden usar el sitemap y llms.txt)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Evitar indexación de respuestas vacías o assets sueltos (opcional; descomenta si aplica en tu hosting)
+# Disallow: /cgi-bin/

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Reducción de costos operativos">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f3460"/>
+      <stop offset="1" stop-color="#003585"/>
+    </linearGradient>
+    <linearGradient id="overlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#000d44" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#000d44" stop-opacity="0.78"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <rect width="1600" height="900" fill="url(#overlay)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="10">
+    <path d="M200 650 L520 520 L760 590 L1050 420 L1400 480" />
+    <circle cx="520" cy="520" r="10" fill="#fff" fill-opacity="0.35" stroke="none"/>
+    <circle cx="760" cy="590" r="10" fill="#fff" fill-opacity="0.35" stroke="none"/>
+    <circle cx="1050" cy="420" r="10" fill="#fff" fill-opacity="0.35" stroke="none"/>
+  </g>
+  <g fill="#ffffff">
+    <text x="110" y="430" font-family="Montserrat, Arial, sans-serif" font-size="34" font-weight="700" opacity="0.85">Eficiencia</text>
+    <text x="110" y="500" font-family="Montserrat, Arial, sans-serif" font-size="64" font-weight="900">Reducción de costos operativos</text>
+    <text x="110" y="560" font-family="Open Sans, Arial, sans-serif" font-size="28" font-weight="600" opacity="0.85">Ahorro sostenible sin comprometer el servicio</text>
+  </g>
+  <g transform="translate(1180 170)" opacity="0.9">
+    <circle cx="120" cy="120" r="120" fill="#ffffff" fill-opacity="0.12"/>
+    <path d="M90 90 h80 v80 h-80 z" fill="#fff" fill-opacity="0.12"/>
+    <path d="M95 135 h70" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M130 95 v80" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Celebración del Día de la Madre - Cleaned Services">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#004aac"/>
+      <stop offset="0.55" stop-color="#7b1fa2"/>
+      <stop offset="1" stop-color="#c2185b"/>
+    </linearGradient>
+    <linearGradient id="overlay" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#001b44" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#001b44" stop-opacity="0.72"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <rect width="1600" height="900" fill="url(#overlay)"/>
+  <g opacity="0.18" fill="#fff">
+    <circle cx="1320" cy="220" r="180"/>
+    <circle cx="1380" cy="280" r="120"/>
+    <circle cx="220" cy="720" r="240"/>
+  </g>
+  <g fill="#ffffff">
+    <text x="110" y="400" font-family="Montserrat, Arial, sans-serif" font-size="34" font-weight="700" opacity="0.9">Empresa</text>
+    <text x="110" y="480" font-family="Montserrat, Arial, sans-serif" font-size="58" font-weight="900">Día de la Madre en Cleaned</text>
+    <text x="110" y="545" font-family="Open Sans, Arial, sans-serif" font-size="28" font-weight="600" opacity="0.9">Desayuno compartido · Oficinas San Isidro</text>
+  </g>
+  <g transform="translate(1180 180)" opacity="0.92">
+    <circle cx="120" cy="120" r="120" fill="#ffffff" fill-opacity="0.14"/>
+    <path d="M120 95c-28 0-50 22-50 50 0 38 50 85 50 85s50-47 50-85c0-28-22-50-50-50zm0 72c-12 0-22-10-22-22s10-22 22-22 22 10 22 22-10 22-22 22z" fill="#fff" fill-opacity="0.9"/>
+  </g>
+</svg>

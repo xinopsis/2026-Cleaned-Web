@@ -1,0 +1,24 @@
+# URLs limpias del blog y redirecciones desde /comunicacion/
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Índice del blog sin index.php
+  RewriteRule ^blog/?$ blog/index.php [L]
+
+  # Artículo: /blog/slug/ → blog/slug.php
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^blog/([a-z0-9-]+)/?$ blog/$1.php [L]
+
+  # Canonical: quitar index.php y .php visibles en /blog/
+  RewriteCond %{THE_REQUEST} \s/blog/index\.php[\s?] [NC]
+  RewriteRule ^blog/index\.php$ /blog/ [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/blog/([a-z0-9-]+)\.php[\s?] [NC]
+  RewriteRule ^blog/([a-z0-9-]+)\.php$ /blog/$1/ [R=301,L]
+
+  # Legacy: /comunicacion/ → /blog/
+  RewriteRule ^comunicacion/?$ /blog/ [R=301,L]
+  RewriteRule ^comunicacion/index\.php$ /blog/ [R=301,L]
+  RewriteRule ^comunicacion/([a-z0-9-]+)\.php$ /blog/$1/ [R=301,L]
+</IfModule>

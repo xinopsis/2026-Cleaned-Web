@@ -1,0 +1,58 @@
+# Cleaned Services (Perú)
+
+> Sitio corporativo en español. Soluciones integrales de limpieza, mantenimiento, gestión operativa, saneamiento ambiental y servicios aeroportuarios.
+
+## Resumen para sistemas de recuperación
+
+- **Nombre:** Cleaned Services
+- **País:** Perú (Lima)
+- **Contacto:** contacto@cleaned.pe | Tel. +51 923 903 810
+- **Dirección (referencia en páginas legales):** Av. Camino Real 390, piso 13, San Isidro, Lima
+- **Idioma del sitio:** Español (es)
+
+## Mapa de contenido (prioridad alta)
+
+- Inicio: https://www.cleaned.pe/
+- Servicios (índice): https://www.cleaned.pe/servicios/index.php
+- Limpieza corporativa: https://www.cleaned.pe/servicios/limpieza.php
+- Facility management: https://www.cleaned.pe/servicios/ingenieria-mantenimiento.php
+- Servicios generales / auxiliares: https://www.cleaned.pe/servicios/auxiliares.php
+- Saneamiento ambiental: https://www.cleaned.pe/servicios/medio-ambiente.php
+- Servicios aeroportuarios: https://www.cleaned.pe/servicios/aeroportuarios.php
+
+## Institucional y sectores
+
+- Nosotros (índice): https://www.cleaned.pe/nosotros/index.php
+- Quiénes somos: https://www.cleaned.pe/nosotros/quienes-somos.php
+- Certificaciones: https://www.cleaned.pe/nosotros/certificaciones.php
+- Cifras: https://www.cleaned.pe/nosotros/cifras.php
+- Canal de denuncias: https://www.cleaned.pe/nosotros/canal-denuncias.php
+- Portal clientes: https://www.cleaned.pe/nosotros/portal-clientes.php
+- Sectores: https://www.cleaned.pe/sectores/index.php
+
+## Sostenibilidad y contacto
+
+- Sostenibilidad / SSOMA: https://www.cleaned.pe/sostenibilidad/index.php
+- Contacto: https://www.cleaned.pe/contacto/index.php
+
+## Blog
+
+- Índice del blog: https://www.cleaned.pe/blog/
+- Limpieza corporativa B2B: https://www.cleaned.pe/blog/limpieza-corporativa-mejores-practicas-b2b/
+- Tecnología (Smart Cleaned): https://www.cleaned.pe/blog/tecnologia-e-innovacion-smart-cleaned/
+- Renovación de uniformes: https://www.cleaned.pe/blog/renovacion-de-uniformes/
+- Día de la Madre (cultura corporativa): https://www.cleaned.pe/blog/celebracion-dia-de-la-madre-administrativo/
+- Cumplimiento normativo: https://www.cleaned.pe/blog/cumplimiento-normativo/
+- Reducción de costos operativos: https://www.cleaned.pe/blog/reduccion-de-costos-operativos/
+- Optimización de recursos: https://www.cleaned.pe/blog/optimizacion-de-recursos/
+
+## Legal
+
+- Política de privacidad: https://www.cleaned.pe/legal/privacidad.php
+- Aviso legal: https://www.cleaned.pe/legal/aviso-legal.php
+
+## Máquina legible
+
+- `robots.txt` (directivas y enlace al sitemap): https://www.cleaned.pe/robots.txt
+- Sitemap XML (lista completa y `lastmod`): https://www.cleaned.pe/sitemap.xml
+- Este archivo: https://www.cleaned.pe/llms.txt
