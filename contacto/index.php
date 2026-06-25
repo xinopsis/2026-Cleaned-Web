@@ -27,7 +27,7 @@
             <span class="contact-info-card__icon" aria-hidden="true">📞</span>
             <div>
               <h4>Teléfono</h4>
-              <p class="contact-info-card__value">+51 923 903 810</p>
+              <p class="contact-info-card__value">+51 960 415 741</p>
               <p class="contact-info-card__hint">Lunes a Viernes: 8:00 – 18:00</p>
             </div>
           </div>

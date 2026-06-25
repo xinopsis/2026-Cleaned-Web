@@ -8,6 +8,92 @@ function articulos_xml_path(): string
     return dirname(__DIR__) . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'articulos.xml';
 }
 
+/**
+ * @return SimpleXMLElement|false
+ */
+function articulos_load_xml()
+{
+    static $xml = null;
+    static $loaded = false;
+
+    if ($loaded) {
+        return $xml;
+    }
+
+    $loaded = true;
+    $path = articulos_xml_path();
+    if (!is_file($path)) {
+        return false;
+    }
+
+    $xml = @simplexml_load_file($path);
+    return $xml;
+}
+
+/**
+ * @return array<int, array{slug: string, label: string}>
+ */
+function articulos_load_categorias(): array
+{
+    $xml = articulos_load_xml();
+    if ($xml === false || !isset($xml->categorias)) {
+        return [];
+    }
+
+    $categorias = [];
+    foreach ($xml->categorias->categoria as $c) {
+        $slug = trim((string)($c['slug'] ?? ''));
+        $label = trim((string)($c['label'] ?? ''));
+        if ($slug === '' || $label === '') {
+            continue;
+        }
+        $categorias[] = ['slug' => $slug, 'label' => $label];
+    }
+
+    return $categorias;
+}
+
+function articulos_categoria_label(string $slug): string
+{
+    foreach (articulos_load_categorias() as $c) {
+        if ($c['slug'] === $slug) {
+            return $c['label'];
+        }
+    }
+
+    return $slug;
+}
+
+function articulos_categoria_es_valida(string $slug): bool
+{
+    if ($slug === '') {
+        return false;
+    }
+
+    foreach (articulos_load_categorias() as $c) {
+        if ($c['slug'] === $slug) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * @param array<int, array<string, mixed>> $articles
+ * @return array<int, array<string, mixed>>
+ */
+function articulos_filtrar_por_categoria(array $articles, string $slug): array
+{
+    if ($slug === '') {
+        return $articles;
+    }
+
+    return array_values(array_filter($articles, static function (array $a) use ($slug) {
+        return ($a['categorySlug'] ?? '') === $slug;
+    }));
+}
+
 /** Ruta relativa a la raíz del sitio: blog/{slug}/ */
 function articulo_blog_path(string $slug): string
 {
@@ -29,14 +115,9 @@ function blog_index_href(string $assetsPrefix = ''): string
  */
 function articulos_load_all(): array
 {
-    $path = articulos_xml_path();
+    $xml = articulos_load_xml();
     $articles = [];
 
-    if (!is_file($path)) {
-        return $articles;
-    }
-
-    $xml = @simplexml_load_file($path);
     if ($xml === false) {
         return $articles;
     }
@@ -51,11 +132,13 @@ function articulos_load_all(): array
         $metaDescription = trim((string)($a->metaDescription ?? ''));
         $title = trim((string)($a->title ?? ''));
         $excerpt = trim((string)($a->excerpt ?? ''));
+        $categorySlug = trim((string)($a->category ?? ''));
 
         $articles[] = [
             'slug' => $slug,
             'title' => $title,
-            'category' => (string)($a->category ?? ''),
+            'categorySlug' => $categorySlug,
+            'category' => articulos_categoria_label($categorySlug),
             'date' => (string)($a->date ?? ''),
             'excerpt' => $excerpt,
             'keyword' => (string)($a->keyword ?? ''),

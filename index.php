@@ -291,6 +291,7 @@ $homeCertLogos = [
     <?php
       require_once __DIR__ . '/includes/articulos.php';
       $articles = articulos_load_all();
+      $blogCategorias = articulos_load_categorias();
 
       $formatDateEs = function (string $iso) {
         $months = ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sep.', 'oct.', 'nov.', 'dic.'];
@@ -334,10 +335,10 @@ $homeCertLogos = [
       }
     ?>
 
+    <div data-article-filters="home">
     <div class="news__grid">
       <?php if ($featured): ?>
-      <!-- Noticia destacada -->
-      <a href="<?= htmlspecialchars($featured['url'], ENT_QUOTES, 'UTF-8') ?>" class="news-card news-card--featured reveal" aria-label="<?= htmlspecialchars($featured['title'], ENT_QUOTES, 'UTF-8') ?>">
+      <a href="<?= htmlspecialchars($featured['url'], ENT_QUOTES, 'UTF-8') ?>" class="news-card news-card--featured news__cell--featured reveal" data-article-category="<?= htmlspecialchars($featured['categorySlug'], ENT_QUOTES, 'UTF-8') ?>" aria-label="<?= htmlspecialchars($featured['title'], ENT_QUOTES, 'UTF-8') ?>">
         <div class="news-card__img" aria-hidden="true">
           <?php
             $ft = $homeThumbSrc($featured);
@@ -360,40 +361,37 @@ $homeCertLogos = [
       </a>
       <?php endif; ?>
 
-      <div class="news__aside reveal reveal--delay-1">
-        <div class="news__side-row">
-          <?php foreach ($side as $idx => $a): ?>
-          <a href="<?= htmlspecialchars($a['url'], ENT_QUOTES, 'UTF-8') ?>" class="news-card" aria-label="<?= htmlspecialchars($a['title'], ENT_QUOTES, 'UTF-8') ?>">
-            <div class="news-card__img news-card__img--sm" aria-hidden="true">
-              <?php
-                $st = $homeThumbSrc($a);
-                if ($st):
-              ?>
-              <img class="news-card__thumb" src="<?= htmlspecialchars($st, ENT_QUOTES, 'UTF-8') ?>" alt="">
-              <?php else: ?>
-              <span class="news-card__img-fallback news-card__img-fallback--pal-<?= (int) $homeFallbackPal($a) ?>"></span>
-              <?php endif; ?>
-            </div>
-            <div class="news-card__body">
-              <span class="news-card__tag"><?= htmlspecialchars($a['category'], ENT_QUOTES, 'UTF-8') ?></span>
-              <h3 class="news-card__title"><?= htmlspecialchars($a['title'], ENT_QUOTES, 'UTF-8') ?></h3>
-              <div class="news-card__meta">
-                <span>📅 <?= htmlspecialchars($formatDateEs($a['date']), ENT_QUOTES, 'UTF-8') ?></span>
-                <span class="news-card__link">Leer más →</span>
-              </div>
-            </div>
-          </a>
-          <?php endforeach; ?>
-        </div>
-        <nav class="news__cats" aria-label="Categorías del blog">
+      <?php foreach ($side as $idx => $a): ?>
+      <a href="<?= htmlspecialchars($a['url'], ENT_QUOTES, 'UTF-8') ?>" class="news-card news-card--compact news__cell--side reveal reveal--delay-<?= $idx + 1 ?>" data-article-category="<?= htmlspecialchars($a['categorySlug'], ENT_QUOTES, 'UTF-8') ?>" aria-label="<?= htmlspecialchars($a['title'], ENT_QUOTES, 'UTF-8') ?>">
+        <div class="news-card__img news-card__img--sm" aria-hidden="true">
           <?php
-            $blogCategories = ['Todas', 'Empresa', 'Sostenibilidad', 'Innovación'];
-            foreach ($blogCategories as $cat):
+            $st = $homeThumbSrc($a);
+            if ($st):
           ?>
-          <a href="blog/" class="news__cat-pill"><?= htmlspecialchars($cat, ENT_QUOTES, 'UTF-8') ?></a>
-          <?php endforeach; ?>
-        </nav>
-      </div>
+          <img class="news-card__thumb" src="<?= htmlspecialchars($st, ENT_QUOTES, 'UTF-8') ?>" alt="">
+          <?php else: ?>
+          <span class="news-card__img-fallback news-card__img-fallback--pal-<?= (int) $homeFallbackPal($a) ?>"></span>
+          <?php endif; ?>
+        </div>
+        <div class="news-card__body">
+          <span class="news-card__tag"><?= htmlspecialchars($a['category'], ENT_QUOTES, 'UTF-8') ?></span>
+          <h3 class="news-card__title"><?= htmlspecialchars($a['title'], ENT_QUOTES, 'UTF-8') ?></h3>
+          <div class="news-card__meta">
+            <span>📅 <?= htmlspecialchars($formatDateEs($a['date']), ENT_QUOTES, 'UTF-8') ?></span>
+            <span class="news-card__link">Leer más →</span>
+          </div>
+        </div>
+      </a>
+      <?php endforeach; ?>
+
+      <nav class="news__cats news__cell--cats reveal reveal--delay-3" aria-label="Categorías del blog">
+        <button type="button" class="news__cat-pill is-active" data-filter-category="">Todas</button>
+        <?php foreach ($blogCategorias as $cat): ?>
+        <button type="button" class="news__cat-pill" data-filter-category="<?= htmlspecialchars($cat['slug'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($cat['label'], ENT_QUOTES, 'UTF-8') ?></button>
+        <?php endforeach; ?>
+      </nav>
+    </div>
+    <p class="news__empty" data-article-empty hidden>No hay noticias en esta categoría.</p>
     </div>
     <div class="text-center mt-xl">
       <a href="blog/" class="btn btn--outline-dark">Ver todas las noticias</a>

@@ -83,7 +83,7 @@ $eSite   = htmlspecialchars($siteName,        ENT_QUOTES, 'UTF-8');
     "@type": "ProfessionalService",
     "name": "Cleaned Services",
     "url": "<?= $eUrl ?>",
-    "telephone": "+51 923 903 810",
+    "telephone": "+51 960 415 741",
     "image": ["<?= $eImage ?>"],
     "address": {
       "@type": "PostalAddress",

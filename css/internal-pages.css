@@ -648,6 +648,17 @@
   font-size: 0.82rem;
   padding: 0.5rem 1rem;
 }
+.com-filter-btn.is-active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+.com-index-empty {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+  color: var(--color-grey);
+  font-size: 0.95rem;
+}
 .com-index-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<articulos version="2.0">
+<articulos version="2.1">
   <!--
     Base de datos de artículos del blog.
     Para agregar uno: duplique <articulo>, asigne slug único y cree blog/{slug}.php.
 
-    Campos:
+    Categorías: definir en <categorias> y referenciar en cada artículo con el slug.
+    Campos de artículo:
     - slug: URL limpia /blog/{slug}/
-    - title: titular visible (H1 / tarjetas)
-    - metaTitle: <title> único orientado a keyword
-    - metaDescription: meta description única orientada a keyword
-    - keyword: palabra clave objetivo del artículo
-    - date: ISO YYYY-MM-DD
+    - category: slug de <categoria> (ver lista abajo)
+    - title, metaTitle, metaDescription, keyword, date, excerpt, image, featured
   -->
+
+  <categorias>
+    <categoria slug="cumplimiento" label="Cumplimiento" />
+    <categoria slug="inocuidad" label="Inocuidad" />
+    <categoria slug="facility-management" label="Facility Management" />
+    <categoria slug="empresa" label="Empresa" />
+    <categoria slug="innovacion" label="Innovación" />
+    <categoria slug="eficiencia" label="Eficiencia" />
+    <categoria slug="gestion-operativa" label="Gestión operativa" />
+  </categorias>
 
   <articulo slug="certificaciones-iso-sistema-gestion-integrado">
     <title>El tridente de la excelencia corporativa: sinergia ISO 9001, ISO 14001 e ISO 45001</title>
     <metaTitle>Certificaciones ISO 9001, 14001 y 45001: Sistema de Gestión Integrado</metaTitle>
     <metaDescription>Convergencia de ISO 9001, ISO 14001 e ISO 45001 en un Sistema de Gestión Integrado: calidad, seguridad ocupacional, sostenibilidad y auditorías semestrales en operaciones B2B.</metaDescription>
     <keyword>certificaciones ISO limpieza corporativa</keyword>
-    <category>Cumplimiento</category>
+    <category>cumplimiento</category>
     <date>2026-06-16</date>
     <excerpt>La integración de ISO 9001, ISO 14001 e ISO 45001 conforma un SGI que blinda operaciones, mitiga riesgos y estandariza la entrega de valor en servicios corporativos de alta exigencia.</excerpt>
     <image>images/articles/certificaciones_trinorma.jpg</image>
@@ -31,7 +39,7 @@
     <metaTitle>Inocuidad alimentaria: feria en Ransa con Cleaned Services</metaTitle>
     <metaDescription>Cleaned Services participó en la feria del Día Mundial de la Inocuidad Alimentaria en Ransa con dinámicas sensoriales, protocolos de higiene y cobertura multimedia.</metaDescription>
     <keyword>inocuidad alimentaria limpieza industrial</keyword>
-    <category>Inocuidad</category>
+    <category>inocuidad</category>
     <date>2026-06-07</date>
     <excerpt>En la feria de Ransa por el Día Mundial de la Inocuidad Alimentaria, Cleaned Services reforzó la cultura de prevención con dinámicas interactivas bajo el lema «Inocuidad es cuidar lo que importa».</excerpt>
     <image>images/articles/ransa01.jpeg</image>
@@ -44,7 +52,7 @@
     <metaTitle>Limpieza corporativa B2B: mejores prácticas de facility management</metaTitle>
     <metaDescription>Guía de limpieza corporativa B2B: diagnóstico técnico, protocolos por industria, tecnología de campo, auditorías y sostenibilidad para empresas en Perú.</metaDescription>
     <keyword>limpieza corporativa B2B</keyword>
-    <category>Facility Management</category>
+    <category>facility-management</category>
     <date>2026-06-02</date>
     <excerpt>Del diagnóstico técnico a la tecnología de campo: guía de mejores prácticas B2B en limpieza corporativa para organizaciones de alto estándar.</excerpt>
     <image>images/articles/robot_limpieza.webp</image>
@@ -57,7 +65,7 @@
     <metaTitle>Renovación de uniformes corporativos: identidad operativa Cleaned</metaTitle>
     <metaDescription>Renovación de uniformes para equipos de limpieza y facility: presencia profesional, orden visual e identidad de marca en sedes de clientes corporativos.</metaDescription>
     <keyword>renovación de uniformes corporativos</keyword>
-    <category>Empresa</category>
+    <category>empresa</category>
     <date>2026-05-17</date>
     <excerpt>Renovamos los uniformes del personal operativo para reforzar presencia, orden e identidad de Cleaned en las distintas sedes de nuestros clientes.</excerpt>
     <image>images/mujer_uniforme_gris_verde_horizontal.webp</image>
@@ -70,7 +78,7 @@
     <metaTitle>Smart Cleaned: tecnología e innovación en control de asistencias</metaTitle>
     <metaDescription>Smart Cleaned: sistema de control de asistencias y visibilidad de recursos en limpieza corporativa. Innovación operativa, trazabilidad y continuidad del servicio.</metaDescription>
     <keyword>Smart Cleaned limpieza corporativa</keyword>
-    <category>Innovación</category>
+    <category>innovacion</category>
     <date>2026-05-10</date>
     <excerpt>Desarrollamos Smart Cleaned, un sistema de control de asistencias que permitirá tener visibilidad de los recursos asignados a cada cliente y reforzar la continuidad operativa.</excerpt>
     <image>images/articles/celular_smartcleaned.jpeg</image>
@@ -83,7 +91,7 @@
     <metaTitle>Día de la Madre en Cleaned: cultura y equipo administrativo</metaTitle>
     <metaDescription>Celebración del Día de la Madre con el equipo administrativo de Cleaned Services: cultura interna, reconocimiento y compromiso con las personas del negocio.</metaDescription>
     <keyword>cultura corporativa Cleaned</keyword>
-    <category>Empresa</category>
+    <category>empresa</category>
     <date>2026-05-08</date>
     <excerpt>Celebramos el Día de la Madre con un desayuno compartido en las oficinas de San Isidro, junto a las colaboradoras del área administrativa de Cleaned.</excerpt>
     <image>images/articles/celebracion-dia-de-la-madre-administrativo.webp</image>
@@ -96,7 +104,7 @@
     <metaTitle>Cumplimiento normativo en limpieza corporativa y facility management</metaTitle>
     <metaDescription>Cumplimiento normativo en servicios de limpieza: control documental, formación, auditorías internas y trazabilidad para operar con seguridad en Perú.</metaDescription>
     <keyword>cumplimiento normativo limpieza corporativa</keyword>
-    <category>Cumplimiento</category>
+    <category>cumplimiento</category>
     <date>2026-03-16</date>
     <excerpt>Alineamos procesos a requisitos del cliente y del entorno regulatorio con control documental, formación y auditorías internas orientadas a prevención.</excerpt>
     <image>images/articles/cumplimiento-normativo.webp</image>
@@ -109,7 +117,7 @@
     <metaTitle>Reducción de costos operativos en limpieza y facility management</metaTitle>
     <metaDescription>Reducción de costos operativos en limpieza corporativa: prevención, control de insumos y productividad sin bajar el estándar de calidad del servicio.</metaDescription>
     <keyword>reducción de costos operativos limpieza</keyword>
-    <category>Eficiencia</category>
+    <category>eficiencia</category>
     <date>2026-01-25</date>
     <excerpt>Identificamos oportunidades de ahorro con foco en prevención, control de insumos y productividad, preservando el estándar de calidad del cliente.</excerpt>
     <image>images/team.webp</image>
@@ -122,7 +130,7 @@
     <metaTitle>Optimización de recursos en gestión operativa y limpieza corporativa</metaTitle>
     <metaDescription>Optimización de recursos en facility management: procesos estandarizados, medición de desempeño y alineación a la demanda real del cliente.</metaDescription>
     <keyword>optimización de recursos operativos</keyword>
-    <category>Gestión operativa</category>
+    <category>gestion-operativa</category>
     <date>2025-11-08</date>
     <excerpt>Estandarizamos procesos, medimos desempeño y alineamos recursos a la demanda real del cliente para maximizar eficiencia y continuidad del servicio.</excerpt>
     <image>images/articles/celular_smartcleaned.jpeg</image>

@@ -155,7 +155,7 @@
       <div class="pillar-card pillar-card--text-center reveal reveal--delay-1">
         <span class="pillar-card__icon">📞</span>
         <h4 class="pillar-card__title">Soporte Técnico</h4>
-        <p class="pillar-card__desc">Llama al <strong>+51 923 903 810</strong> para soporte técnico del portal. Atención L–V de 8:00 a 18:00.</p>
+        <p class="pillar-card__desc">Llama al <strong>+51 960 415 741</strong> para soporte técnico del portal. Atención L–V de 8:00 a 18:00.</p>
       </div>
       <div class="pillar-card pillar-card--text-center reveal reveal--delay-2">
         <span class="pillar-card__icon">📧</span>

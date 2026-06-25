@@ -30,7 +30,7 @@
           <li class="legal-kv-item"><strong>RUC:</strong> 20XXXXXXXXX</li>
           <li class="legal-kv-item"><strong>Domicilio social:</strong> Av. Camino Real 390, piso 13 - San Isidro, Lima PE</li>
           <li class="legal-kv-item"><strong>Correo electrónico:</strong> contacto@cleaned.pe</li>
-          <li class="legal-kv-item"><strong>Teléfono:</strong> +51 923 903 810</li>
+          <li class="legal-kv-item"><strong>Teléfono:</strong> +51 960 415 741</li>
           <li class="legal-kv-item"><strong>Actividad:</strong> Servicios de externalización empresarial</li>
         </ul>
       </div>

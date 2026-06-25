@@ -4,6 +4,11 @@
   require_once __DIR__ . '/../includes/articulos.php';
   require_once __DIR__ . '/../includes/site-path.php';
   $articles = articulos_load_all();
+  $categorias = articulos_load_categorias();
+  $categoriaActiva = isset($_GET['categoria']) ? trim((string)$_GET['categoria']) : '';
+  if ($categoriaActiva !== '' && !articulos_categoria_es_valida($categoriaActiva)) {
+    $categoriaActiva = '';
+  }
 ?>
 <?php include '../includes/header.php'; ?>
 
@@ -21,14 +26,14 @@
 
 <!-- Últimas entradas -->
 <section class="section">
-  <div class="container">
+  <div class="container" data-article-filters="blog">
     <div class="com-index-toolbar reveal">
       <h2 class="section-title">Últimas publicaciones</h2>
-      <div class="com-index-filters">
-        <button type="button" class="btn btn--outline com-filter-btn">Todas</button>
-        <button type="button" class="btn btn--outline com-filter-btn">Empresa</button>
-        <button type="button" class="btn btn--outline com-filter-btn">Sostenibilidad</button>
-        <button type="button" class="btn btn--outline com-filter-btn">Innovación</button>
+      <div class="com-index-filters" role="group" aria-label="Filtrar por categoría">
+        <button type="button" class="btn btn--outline com-filter-btn<?= $categoriaActiva === '' ? ' is-active' : '' ?>" data-filter-category="">Todas</button>
+        <?php foreach ($categorias as $cat): ?>
+        <button type="button" class="btn btn--outline com-filter-btn<?= $categoriaActiva === $cat['slug'] ? ' is-active' : '' ?>" data-filter-category="<?= htmlspecialchars($cat['slug'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($cat['label'], ENT_QUOTES, 'UTF-8') ?></button>
+        <?php endforeach; ?>
       </div>
     </div>
 
@@ -55,14 +60,21 @@
     ?>
 
     <div class="com-index-grid">
-      <?php foreach ($articles as $i => $a): ?>
+      <?php
+        $visibleCount = 0;
+        foreach ($articles as $i => $a):
+          $isHidden = $categoriaActiva !== '' && $a['categorySlug'] !== $categoriaActiva;
+          if (!$isHidden) {
+            $visibleCount++;
+          }
+      ?>
         <?php
           $href = htmlspecialchars($a['slug'] . '/', ENT_QUOTES, 'UTF-8');
           $pal = $comMediaPaletteClass($a);
           $thumb = $comThumbSrc($a);
           $mediaClass = 'com-news-card__media' . ($pal !== '' ? ' ' . $pal : '');
         ?>
-        <a href="<?= $href ?>" class="com-news-card reveal reveal--delay-<?= min($i + 1, 6) ?>" aria-label="<?= htmlspecialchars($a['title'], ENT_QUOTES, 'UTF-8') ?>">
+        <a href="<?= $href ?>" class="com-news-card reveal reveal--delay-<?= min($i + 1, 6) ?>" data-article-category="<?= htmlspecialchars($a['categorySlug'], ENT_QUOTES, 'UTF-8') ?>"<?= $isHidden ? ' hidden' : '' ?> aria-label="<?= htmlspecialchars($a['title'], ENT_QUOTES, 'UTF-8') ?>">
           <div class="<?= htmlspecialchars($mediaClass, ENT_QUOTES, 'UTF-8') ?>" aria-hidden="true">
             <?php if ($thumb): ?>
               <img src="<?= htmlspecialchars($thumb, ENT_QUOTES, 'UTF-8') ?>" alt="">
@@ -80,6 +92,7 @@
         </a>
       <?php endforeach; ?>
     </div>
+    <p class="com-index-empty" data-article-empty<?= $visibleCount > 0 ? ' hidden' : '' ?>>No hay publicaciones en esta categoría.</p>
   </div>
 </section>
 
@@ -103,7 +116,7 @@
             <span class="com-dept-line__icon" aria-hidden="true">📞</span>
             <div>
               <strong>Teléfono</strong>
-              <span>+51 923 903 810</span>
+              <span>+51 960 415 741</span>
             </div>
           </div>
         </div>
