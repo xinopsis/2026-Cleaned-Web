@@ -50,12 +50,6 @@
 
   window.addEventListener('scroll', function () {
     updateHeader();
-
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    if (!popupFired && maxScroll > 0 && window.scrollY / maxScroll > 0.55) {
-      popupFired = true;
-      document.getElementById('js-popup').classList.add('is-open');
-    }
   }, { passive: true });
 
   desktopMQ.addEventListener('change', updateHeader);
@@ -109,20 +103,5 @@
 
   document.querySelectorAll('.fade-up, .fade-up-stagger').forEach(function (el) {
     io.observe(el);
-  });
-
-  /* POPUP */
-  let popupFired = false;
-
-  function closePopup() {
-    document.getElementById('js-popup').classList.remove('is-open');
-  }
-
-  document.getElementById('js-popup-close').addEventListener('click', closePopup);
-  document.getElementById('js-popup').addEventListener('click', function (e) {
-    if (e.target === this) closePopup();
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closePopup();
   });
 })();
