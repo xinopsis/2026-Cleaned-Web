@@ -1,6 +1,7 @@
 <?php $pageTitle = 'Cleaned Services - Soluciones integrales de limpieza, mantenimiento y gestión operativa'; ?>
 <?php $pageDescription = 'Soluciones integrales de limpieza, mantenimiento y gestión operativa en Perú'; ?>
 <?php
+
 $homeCertLogos = [
   ['src' => 'images/logo-certificacion-01.png', 'alt' => 'ISO 9001:2015'],
   ['src' => 'images/logo-certificacion-02.png', 'alt' => 'ISO 14001:2015'],
@@ -8,13 +9,16 @@ $homeCertLogos = [
   ['src' => 'images/logo-certificacion-04.png', 'alt' => 'HODELPE homologado'],
   ['src' => 'images/logo-certificacion-05.png', 'alt' => 'MEGA homologado'],
   ['src' => 'images/logo-certificacion-06.png', 'alt' => 'SGS homologado'],
+  ['src' => 'images/LogoDGAC_blanco.png', 'alt' => 'DGAC Perú - Dirección General de Aeronáutica Civil'],
 ];
+
 ?>
 <?php include 'includes/header.php'; ?>
 
 <!-- ====================================================
      HERO SLIDER
      ==================================================== -->
+<div class="hero-zone">
 <section class="hero" aria-label="Presentación principal">
 
   <!-- Slide 1 — Equipo con uniformes, skyline Lima -->
@@ -77,6 +81,17 @@ $homeCertLogos = [
 
 </section>
 
+  <!-- Franja de certificaciones (enlace a detalle) -->
+  <a href="nosotros/certificaciones.php" class="hero__certs" aria-label="Ver certificaciones y homologaciones">
+    <div class="container hero__certs-inner">
+      <p class="hero__certs-label">Certificaciones y homologaciones</p>
+      <div class="cert-marquee__viewport cert-marquee__viewport--hero">
+        <?php $certMarqueeDecorative = true; include __DIR__ . '/includes/home-cert-marquee-track.php'; unset($certMarqueeDecorative); ?>
+      </div>
+    </div>
+  </a>
+</div>
+
 <!-- ====================================================
      SERVICIOS
      ==================================================== -->
@@ -113,37 +128,6 @@ $homeCertLogos = [
         <span class="service-card__link">Ver más →</span>
       </a>
     </div>
-  </div>
-</section>
-
-<!-- ====================================================
-     CERTIFICACIONES (marquee infinito)
-     ==================================================== -->
-<section class="cert-marquee" aria-labelledby="cert-marquee-title">
-  <div class="container">
-    <div class="cert-marquee__head text-center reveal">
-      <span class="section-tag">Acreditaciones</span>
-      <h2 id="cert-marquee-title" class="section-title section-title--center">Certificaciones y homologaciones</h2>
-      <p class="section-subtitle section-subtitle--center">Estándares internacionales que respaldan nuestra operación en cada servicio.</p>
-    </div>
-  </div>
-  <div class="cert-marquee__viewport">
-    <div class="cert-marquee__track">
-      <?php foreach ([1, 2, 3] as $marqueeSeq): ?>
-      <div class="cert-marquee__group<?= $marqueeSeq > 1 ? ' cert-marquee__group--clone' : '' ?>" role="<?= $marqueeSeq === 1 ? 'list' : 'presentation' ?>"<?= $marqueeSeq > 1 ? ' aria-hidden="true"' : '' ?>>
-        <?php foreach ($homeCertLogos as $cert): ?>
-          <div class="cert-marquee__cell"<?= $marqueeSeq === 1 ? ' role="listitem"' : '' ?>>
-            <a href="nosotros/certificaciones.php" class="cert-marquee__link"<?= $marqueeSeq === 1 ? ' title="' . htmlspecialchars($cert['alt'], ENT_QUOTES, 'UTF-8') . '"' : ' tabindex="-1"' ?>>
-              <img src="<?= htmlspecialchars($cert['src'], ENT_QUOTES, 'UTF-8') ?>" alt="<?= $marqueeSeq === 1 ? htmlspecialchars($cert['alt'], ENT_QUOTES, 'UTF-8') : '' ?>" width="88" height="88" class="cert-marquee__img" loading="eager" decoding="async">
-            </a>
-          </div>
-        <?php endforeach; ?>
-      </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-  <div class="container cert-marquee__foot text-center reveal">
-    <a href="nosotros/certificaciones.php" class="btn btn--outline btn--sm">Ver detalle de certificaciones</a>
   </div>
 </section>
 
@@ -185,7 +169,7 @@ $homeCertLogos = [
       <div class="about__content reveal reveal--right">
         <span class="section-tag">Nosotros</span>
         <h2 class="section-title" id="about-title">Soluciones integrales para empresas e instituciones</h2>
-        <p>CLEANED SERVICES es una empresa peruana especializada en brindar soluciones integrales para empresas e instituciones. Contamos con un equipo altamente capacitado, tecnología de punta y un enfoque basado en calidad, sostenibilidad y seguridad.</p>
+        <p><strong>Cleaned Services</strong> es una empresa peruana con sede en <strong>Lima, Perú</strong>, especializada en soluciones integrales de limpieza corporativa, facility management, saneamiento ambiental y servicios aeroportuarios para empresas e instituciones en todo el país. Con más de <strong>6 años de experiencia</strong>, <strong>3,000 colaboradores</strong> y <strong>200+ clientes atendidos</strong>, opera bajo certificaciones ISO 9001, ISO 14001 e ISO 45001, y homologaciones de SGS, HODELPE y MEGA.</p>
         <div class="about__pillars">
           <div class="about__pillar">
             <span class="about__pillar-icon" aria-hidden="true">⭐</span>
@@ -384,7 +368,7 @@ $homeCertLogos = [
       </a>
       <?php endforeach; ?>
 
-      <nav class="news__cats news__cell--cats reveal reveal--delay-3" aria-label="Categorías del blog">
+      <nav class="news__cats news__cell--cats" aria-label="Categorías del blog">
         <button type="button" class="news__cat-pill is-active" data-filter-category="">Todas</button>
         <?php foreach ($blogCategorias as $cat): ?>
         <button type="button" class="news__cat-pill" data-filter-category="<?= htmlspecialchars($cat['slug'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($cat['label'], ENT_QUOTES, 'UTF-8') ?></button>
@@ -395,6 +379,57 @@ $homeCertLogos = [
     </div>
     <div class="text-center mt-xl">
       <a href="blog/" class="btn btn--outline-dark">Ver todas las noticias</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     PREGUNTAS FRECUENTES (FAQ)
+     ==================================================== -->
+<section class="faq section section--grey" id="preguntas-frecuentes" aria-labelledby="faq-title">
+  <div class="container">
+    <h2 class="section-title section-title--center reveal" id="faq-title">Preguntas frecuentes</h2>
+
+    <div class="faq__list">
+      <details class="faq-item reveal" id="faq-1">
+        <summary class="faq-item__q">¿Qué es Cleaned Services y dónde opera?</summary>
+        <p class="faq-item__a">Cleaned Services es una empresa peruana de soluciones integrales de limpieza, facility management y saneamiento ambiental con sede en Lima, Perú. Atiende empresas en sectores de industria, banca, retail, educación y transporte en todo el territorio nacional.</p>
+      </details>
+
+      <details class="faq-item reveal" id="faq-2">
+        <summary class="faq-item__q">¿Qué certificaciones tiene Cleaned Services?</summary>
+        <p class="faq-item__a">Cleaned Services cuenta con certificaciones ISO 9001:2015 (calidad), ISO 14001:2015 (gestión ambiental) e ISO 45001:2018 (seguridad y salud ocupacional), además de homologaciones SGS, HODELPE y MEGA.</p>
+      </details>
+
+      <details class="faq-item reveal" id="faq-3">
+        <summary class="faq-item__q">¿Qué servicios ofrece Cleaned Services?</summary>
+        <p class="faq-item__a">Los servicios incluyen: limpieza corporativa, facility management, servicios generales y auxiliares, saneamiento ambiental (fumigación, desinfección, control de plagas) y servicios aeroportuarios. Todos con protocolos SSOMA y personal certificado.</p>
+      </details>
+
+      <details class="faq-item reveal" id="faq-4">
+        <summary class="faq-item__q">¿Qué es facility management y por qué contratar este servicio en Perú?</summary>
+        <p class="faq-item__a">Facility management es la gestión integral de las instalaciones de una empresa, incluyendo mantenimiento preventivo y correctivo, gestión de proveedores y optimización de espacios. En Perú, Cleaned Services ofrece este servicio con ingenieros especializados y plataformas digitales de supervisión en tiempo real.</p>
+      </details>
+
+      <details class="faq-item reveal" id="faq-5">
+        <summary class="faq-item__q">¿Cuántos colaboradores tiene Cleaned Services?</summary>
+        <p class="faq-item__a">Cleaned Services cuenta con más de 3,000 colaboradores capacitados operando en múltiples sedes a nivel nacional, incluyendo clientes en sectores bancario, industrial y de transporte.</p>
+      </details>
+
+      <details class="faq-item reveal" id="faq-6">
+        <summary class="faq-item__q">¿Cómo solicitar una cotización de limpieza corporativa?</summary>
+        <p class="faq-item__a">Para solicitar una cotización, puede contactar a Cleaned Services al +51 960 415 741, escribir a contacto@cleaned.pe, o completar el formulario en la sección de contacto del sitio web. El equipo comercial responde en menos de 24 horas hábiles.</p>
+      </details>
+
+      <details class="faq-item reveal" id="faq-7">
+        <summary class="faq-item__q">¿Cleaned Services trabaja con empresas del sector bancario?</summary>
+        <p class="faq-item__a">Sí. Cleaned Services tiene experiencia comprobada en el sector de banca y seguros en Perú, con protocolos de seguridad adaptados a instalaciones financieras que requieren continuidad operativa y confidencialidad.</p>
+      </details>
+
+      <details class="faq-item reveal" id="faq-8">
+        <summary class="faq-item__q">¿Qué incluye el plan SSOMA de Cleaned Services?</summary>
+        <p class="faq-item__a">Cada contrato incluye un plan SSOMA personalizado: equipos de protección personal (EPP), análisis IPERC, planes de emergencia activos, vigilancia médica ocupacional y uso exclusivo de productos biodegradables certificados.</p>
+      </details>
     </div>
   </div>
 </section>

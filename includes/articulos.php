@@ -31,23 +31,79 @@ function articulos_load_xml()
 }
 
 /**
+ * @return array<string, string> slug => label
+ */
+function articulos_categorias_map(): array
+{
+    static $map = null;
+    if ($map !== null) {
+        return $map;
+    }
+
+    $map = [];
+    $xml = articulos_load_xml();
+    if ($xml !== false && isset($xml->categorias->categoria)) {
+        foreach ($xml->categorias->categoria as $c) {
+            $attrs = $c->attributes();
+            if ($attrs === null) {
+                continue;
+            }
+            $slug = trim((string)($attrs['slug'] ?? ''));
+            $label = trim((string)($attrs['label'] ?? ''));
+            if ($slug !== '' && $label !== '') {
+                $map[$slug] = $label;
+            }
+        }
+    }
+
+    return $map;
+}
+
+function articulos_humanize_slug(string $slug): string
+{
+    if ($slug === '') {
+        return '';
+    }
+
+    $text = str_replace('-', ' ', $slug);
+    if (function_exists('mb_convert_case')) {
+        return mb_convert_case($text, MB_CASE_TITLE, 'UTF-8');
+    }
+
+    return ucwords($text);
+}
+
+/**
  * @return array<int, array{slug: string, label: string}>
  */
 function articulos_load_categorias(): array
 {
+    $map = articulos_categorias_map();
+    $categorias = [];
+    foreach ($map as $slug => $label) {
+        $categorias[] = ['slug' => $slug, 'label' => $label];
+    }
+    if ($categorias !== []) {
+        return $categorias;
+    }
+
+    // Respaldo: slugs únicos definidos en los artículos
+    $seen = [];
     $xml = articulos_load_xml();
-    if ($xml === false || !isset($xml->categorias)) {
+    if ($xml === false) {
         return [];
     }
 
-    $categorias = [];
-    foreach ($xml->categorias->categoria as $c) {
-        $slug = trim((string)($c['slug'] ?? ''));
-        $label = trim((string)($c['label'] ?? ''));
-        if ($slug === '' || $label === '') {
+    foreach ($xml->articulo as $a) {
+        $slug = trim((string)($a->category ?? ''));
+        if ($slug === '' || isset($seen[$slug])) {
             continue;
         }
-        $categorias[] = ['slug' => $slug, 'label' => $label];
+        $seen[$slug] = true;
+        $categorias[] = [
+            'slug' => $slug,
+            'label' => articulos_humanize_slug($slug),
+        ];
     }
 
     return $categorias;
@@ -55,13 +111,16 @@ function articulos_load_categorias(): array
 
 function articulos_categoria_label(string $slug): string
 {
-    foreach (articulos_load_categorias() as $c) {
-        if ($c['slug'] === $slug) {
-            return $c['label'];
-        }
+    if ($slug === '') {
+        return '';
     }
 
-    return $slug;
+    $map = articulos_categorias_map();
+    if (isset($map[$slug])) {
+        return $map[$slug];
+    }
+
+    return articulos_humanize_slug($slug);
 }
 
 function articulos_categoria_es_valida(string $slug): bool

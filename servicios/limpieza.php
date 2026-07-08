@@ -1,5 +1,17 @@
 <?php $pageTitle = 'Limpieza Corporativa | Cleaned Services'; ?>
 <?php $pageDescription = 'Servicios de limpieza corporativa profesional en Perú. Oficinas, centros comerciales, industria y más. Equipo capacitado, productos ecológicos y supervisión continua.'; ?>
+<?php $pageJsonLd = <<<'JSONLD'
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Limpieza Corporativa",
+  "serviceType": "Limpieza y mantenimiento de instalaciones",
+  "provider": { "@id": "https://www.cleaned.pe/#organization" },
+  "areaServed": { "@type": "Country", "name": "Perú" },
+  "description": "Servicio profesional de limpieza corporativa para empresas e instituciones en Perú. Incluye protocolos certificados ISO 9001, personal capacitado y tecnología de vanguardia.",
+  "url": "https://www.cleaned.pe/servicios/limpieza.php"
+}
+JSONLD; ?>
 <?php include '../includes/header.php'; ?>
 
 

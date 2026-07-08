@@ -1,5 +1,17 @@
 <?php $pageTitle = 'Facility Management | Cleaned Services'; ?>
 <?php $pageDescription = 'Gestión integral de instalaciones en Perú. Mantenimiento preventivo, correctivo, gestión energética y operativa para empresas. Reducción de costos y continuidad garantizada.'; ?>
+<?php $pageJsonLd = <<<'JSONLD'
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Facility Management",
+  "serviceType": "Gestión integral de instalaciones",
+  "provider": { "@id": "https://www.cleaned.pe/#organization" },
+  "areaServed": { "@type": "Country", "name": "Perú" },
+  "description": "Gestión integral de instalaciones empresariales en Perú: mantenimiento preventivo y correctivo, gestión de proveedores y optimización de espacios bajo estándares ISO 9001 e ISO 45001.",
+  "url": "https://www.cleaned.pe/servicios/ingenieria-mantenimiento.php"
+}
+JSONLD; ?>
 <?php include '../includes/header.php'; ?>
 
 

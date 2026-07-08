@@ -1,5 +1,17 @@
 <?php $pageTitle = 'Servicios Generales | Cleaned Services'; ?>
 <?php $pageDescription = 'Servicios generales y de soporte para empresas en Perú. Mensajería, recepción, atención al cliente, gestión documental y más. Soluciones operativas a medida.'; ?>
+<?php $pageJsonLd = <<<'JSONLD'
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Servicios Generales",
+  "serviceType": "Servicios generales y auxiliares para empresas",
+  "provider": { "@id": "https://www.cleaned.pe/#organization" },
+  "areaServed": { "@type": "Country", "name": "Perú" },
+  "description": "Servicios generales y de soporte para empresas en Perú: mensajería, recepción, atención al cliente y gestión documental, con personal capacitado y protocolos SSOMA.",
+  "url": "https://www.cleaned.pe/servicios/auxiliares.php"
+}
+JSONLD; ?>
 <?php include '../includes/header.php'; ?>
 
 

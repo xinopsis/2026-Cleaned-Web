@@ -37,6 +37,7 @@ $isHome     = ($depth === 0 && $scriptName === 'index.php');
 $pageTitle       = $pageTitle       ?? 'Cleaned Services - Soluciones integrales de limpieza, mantenimiento y gestión operativa';
 $pageDescription = $pageDescription ?? 'Soluciones integrales de limpieza, mantenimiento y gestión operativa en Perú';
 $pageImage       = $pageImage       ?? site_asset_href('images/hero-img-uniformes.webp');
+$pageJsonLd      = $pageJsonLd      ?? '';
 $siteName        = 'Cleaned Services';
 
 $ogImage = $pageImage;
@@ -80,31 +81,130 @@ $eSite   = htmlspecialchars($siteName,        ENT_QUOTES, 'UTF-8');
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Cleaned Services",
-    "url": "<?= $eUrl ?>",
-    "telephone": "+51 960 415 741",
-    "image": ["<?= $eImage ?>"],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Av. Camino Real 390, piso 13",
-      "addressLocality": "Lima",
-      "addressRegion": "Lima",
-      "addressCountry": "PE"
-    },
-    "areaServed": [
-      { "@type": "Country", "name": "Peru" },
-      { "@type": "AdministrativeArea", "name": "Lima" }
-    ],
-    "makesOffer": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Limpieza Corporativa" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Seguridad Privada" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ingeniería y Mantenimiento" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Medio Ambiente" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Servicios Auxiliares" } }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.cleaned.pe/#organization",
+        "name": "Cleaned Services",
+        "legalName": "Cleaned Services S.A.C.",
+        "url": "https://www.cleaned.pe",
+        "logo": "https://www.cleaned.pe/images/logo_cleaned_color.svg",
+        "description": "Empresa peruana especializada en soluciones integrales de limpieza corporativa, facility management, saneamiento ambiental y servicios aeroportuarios con más de 6 años de experiencia y 3,000 colaboradores.",
+        "foundingDate": "2018",
+        "numberOfEmployees": { "@type": "QuantitativeValue", "value": 3000 },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+51 960 415 741",
+          "email": "contacto@cleaned.pe",
+          "contactType": "customer service",
+          "availableLanguage": "Spanish"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Camino Real 390, piso 13",
+          "addressLocality": "Lima",
+          "addressRegion": "Lima",
+          "addressCountry": "PE"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/cleaned-services/",
+          "https://www.instagram.com/cleanedoficial",
+          "https://www.facebook.com/people/Cleaned-Services/61579062865176/"
+        ],
+        "hasCredential": [
+          { "@type": "EducationalOccupationalCredential", "name": "ISO 9001:2015", "description": "Certificación de Sistema de Gestión de Calidad" },
+          { "@type": "EducationalOccupationalCredential", "name": "ISO 14001:2015", "description": "Certificación de Sistema de Gestión Ambiental" },
+          { "@type": "EducationalOccupationalCredential", "name": "ISO 45001:2018", "description": "Certificación de Sistema de Gestión de Seguridad y Salud en el Trabajo" }
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.cleaned.pe/#localbusiness",
+        "name": "Cleaned Services",
+        "image": "<?= $eImage ?>",
+        "url": "https://www.cleaned.pe",
+        "telephone": "+51 960 415 741",
+        "email": "contacto@cleaned.pe",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Camino Real 390, piso 13",
+          "addressLocality": "Lima",
+          "addressRegion": "Lima",
+          "addressCountry": "PE"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": -12.0464, "longitude": -77.0428 },
+        "areaServed": { "@type": "Country", "name": "Perú" },
+        "parentOrganization": { "@id": "https://www.cleaned.pe/#organization" },
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Limpieza Corporativa" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facility Management" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Servicios Generales" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Saneamiento Ambiental" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Servicios Aeroportuarios" } }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.cleaned.pe/#website",
+        "url": "https://www.cleaned.pe",
+        "name": "Cleaned Services",
+        "publisher": { "@id": "https://www.cleaned.pe/#organization" },
+        "inLanguage": "es-PE"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.cleaned.pe/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es Cleaned Services y dónde opera?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Cleaned Services es una empresa peruana de soluciones integrales de limpieza, facility management y saneamiento ambiental con sede en Lima, Perú. Atiende empresas en sectores de industria, banca, retail, educación y transporte en todo el territorio nacional." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué certificaciones tiene Cleaned Services?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Cleaned Services cuenta con certificaciones ISO 9001:2015 (calidad), ISO 14001:2015 (gestión ambiental) e ISO 45001:2018 (seguridad y salud ocupacional), además de homologaciones SGS, HODELPE y MEGA." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué servicios ofrece Cleaned Services?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Los servicios incluyen: limpieza corporativa, facility management, servicios generales y auxiliares, saneamiento ambiental (fumigación, desinfección, control de plagas) y servicios aeroportuarios. Todos con protocolos SSOMA y personal certificado." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué es facility management y por qué contratar este servicio en Perú?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Facility management es la gestión integral de las instalaciones de una empresa, incluyendo mantenimiento preventivo y correctivo, gestión de proveedores y optimización de espacios. En Perú, Cleaned Services ofrece este servicio con ingenieros especializados y plataformas digitales de supervisión en tiempo real." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuántos colaboradores tiene Cleaned Services?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Cleaned Services cuenta con más de 3,000 colaboradores capacitados operando en múltiples sedes a nivel nacional, incluyendo clientes en sectores bancario, industrial y de transporte." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo solicitar una cotización de limpieza corporativa?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Para solicitar una cotización, puede contactar a Cleaned Services al +51 960 415 741, escribir a contacto@cleaned.pe, o completar el formulario en la sección de contacto del sitio web. El equipo comercial responde en menos de 24 horas hábiles." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cleaned Services trabaja con empresas del sector bancario?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cleaned Services tiene experiencia comprobada en el sector de banca y seguros en Perú, con protocolos de seguridad adaptados a instalaciones financieras que requieren continuidad operativa y confidencialidad." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué incluye el plan SSOMA de Cleaned Services?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Cada contrato incluye un plan SSOMA personalizado: equipos de protección personal (EPP), análisis IPERC, planes de emergencia activos, vigilancia médica ocupacional y uso exclusivo de productos biodegradables certificados." }
+          }
+        ]
+      }
     ]
   }
   </script>
+  <?php endif; ?>
+
+  <?php if (!empty($pageJsonLd)): ?>
+  <script type="application/ld+json"><?= $pageJsonLd ?></script>
   <?php endif; ?>
 
   <meta property="og:locale"    content="es_PE" />
@@ -140,13 +240,9 @@ $eSite   = htmlspecialchars($siteName,        ENT_QUOTES, 'UTF-8');
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV6TWP2J"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <!-- BACK TO TOP -->
-  <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
 
   <!-- HEADER -->
-  <header class="header" id="header">
+  <header class="header<?= $isHome ? ' header--home' : '' ?>" id="header">
     <div class="container header__inner">
 
       <!-- Logo -->
@@ -154,8 +250,14 @@ $eSite   = htmlspecialchars($siteName,        ENT_QUOTES, 'UTF-8');
         <a href="<?= $assetsPrefix ?>index.php" aria-label="Cleaned Services - Inicio">
           <img src="<?= $assetsPrefix ?>images/logo_cleaned_color.svg"
                alt="Cleaned Services"
-               class="header__logo-img"
+               class="header__logo-img header__logo-img--color"
                width="210" height="72" />
+          <?php if ($isHome): ?>
+          <img src="<?= $assetsPrefix ?>images/logo_cleaned_blanco.svg"
+               alt="Cleaned Services"
+               class="header__logo-img header__logo-img--white"
+               width="210" height="72" aria-hidden="true" />
+          <?php endif; ?>
         </a>
       </div>
 

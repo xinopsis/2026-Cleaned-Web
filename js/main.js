@@ -240,17 +240,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── PARALLAX EFFECT (hero decorative elements) ──
-  const heroSection = document.querySelector('.hero');
-  if (heroSection) {
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      if (scrollY < window.innerHeight) {
-        heroSection.style.transform = `translateY(${scrollY * 0.3}px)`;
-      }
-    }, { passive: true });
-  }
-
   // ── HOVER TILT (service cards) ───────────────
   document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {

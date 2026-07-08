@@ -1,5 +1,17 @@
 <?php $pageTitle = 'Saneamiento Ambiental | Cleaned Services'; ?>
 <?php $pageDescription = 'Servicios de saneamiento ambiental en Perú. Fumigación, control de plagas, desinfección, desratización y control de legionela. Cumplimiento normativo garantizado.'; ?>
+<?php $pageJsonLd = <<<'JSONLD'
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Saneamiento Ambiental",
+  "serviceType": "Saneamiento ambiental y control de plagas",
+  "provider": { "@id": "https://www.cleaned.pe/#organization" },
+  "areaServed": { "@type": "Country", "name": "Perú" },
+  "description": "Saneamiento ambiental en Perú: fumigación, desinfección, control de plagas y manejo de residuos peligrosos, con productos biodegradables certificados y personal habilitado por DIGESA.",
+  "url": "https://www.cleaned.pe/servicios/medio-ambiente.php"
+}
+JSONLD; ?>
 <?php include '../includes/header.php'; ?>
 
 

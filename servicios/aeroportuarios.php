@@ -1,5 +1,17 @@
 <?php $pageTitle = 'Cleaned Airport Services (CAS) | División Aeroportuaria de Cleaned Services'; ?>
 <?php $pageDescription = 'Cleaned Airport Services (CAS) es la división especializada de Cleaned Services para entornos aeroportuarios en Perú. Limpieza de terminales, aeronaves, pistas y plataformas, asistencia en tierra y servicios bajo estándares OACI, ICAO y SENASA.'; ?>
+<?php $pageJsonLd = <<<'JSONLD'
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Servicios Aeroportuarios",
+  "serviceType": "Servicios aeroportuarios y asistencia en tierra",
+  "provider": { "@id": "https://www.cleaned.pe/#organization" },
+  "areaServed": { "@type": "Country", "name": "Perú" },
+  "description": "Cleaned Airport Services (CAS) brinda limpieza de terminales, aeronaves, pistas y plataformas, además de asistencia en tierra en Perú, bajo estándares OACI, ICAO y SENASA.",
+  "url": "https://www.cleaned.pe/servicios/aeroportuarios.php"
+}
+JSONLD; ?>
 <?php include '../includes/header.php'; ?>
 
 <!-- HERO INTERIOR -->
