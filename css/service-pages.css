@@ -255,6 +255,24 @@
   line-height: 1.7;
   font-size: 0.95rem;
 }
+.gradient-card__pdf-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+  text-decoration: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+.gradient-card__pdf-link:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+.gradient-card__pdf-icon {
+  display: block;
+  width: 56px;
+  height: 56px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.2));
+}
 
 /* ── Visual blocks variants ───────────────── */
 .service-intro__visual--blue {

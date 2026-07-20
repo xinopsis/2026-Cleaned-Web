@@ -26,6 +26,19 @@
     </div>
     <div class="cert-grid">
 
+      <div class="cert-card cert-card--featured reveal">
+        <img class="cert-card__logo cert-card__logo--wide" src="../images/LogoDGAC.png" alt="Dirección General de Aeronáutica Civil (DGAC) del Perú" width="598" height="153" loading="lazy" decoding="async">
+        <div>
+          <h3 class="cert-card__title">Certificación DGAC — Aeropuerto Jorge Chávez</h3>
+          <p class="cert-card__subtitle">Dirección General de Aeronáutica Civil del Perú</p>
+          <p class="cert-card__body">Cleaned Airport Services está certificada por la Dirección General de Aeronáutica Civil (DGAC) del Perú, lo que la habilita para operar dentro del Aeropuerto Internacional Jorge Chávez de Lima. Esta certificación acredita el cumplimiento de los estrictos estándares de seguridad operacional y normativa aeroportuaria exigidos para prestar servicios en zonas aeronáuticas restringidas.</p>
+          <div class="cert-card__tags">
+            <span class="cert-tag cert-tag--primary">Aeropuerto Internacional Jorge Chávez</span>
+            <span class="cert-tag cert-tag--neutral">Cleaned Airport Services</span>
+          </div>
+        </div>
+      </div>
+
       <div class="cert-card reveal reveal--delay-1">
         <img class="cert-card__logo" src="../images/logo-certificacion-01.png" alt="ISO 9001:2015" width="80" height="80" loading="lazy" decoding="async">
         <div>

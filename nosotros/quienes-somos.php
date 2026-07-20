@@ -19,7 +19,7 @@
 <!-- Misión Visión Valores -->
 <section class="section">
   <div class="container">
-    <div class="grid grid-3 gap-lg mb-xxl">
+    <div class="grid grid-2 gap-lg mb-xxl">
       <div class="gradient-card gradient-card--primary reveal reveal--delay-1">
         <h3 class="gradient-card__title gradient-card__title--sm">Misión</h3>
         <p class="gradient-card__desc">Brindar soluciones de servicios con altos estándares de calidad, generando valor para nuestros clientes y promoviendo trabajo formal y digno en el Perú.</p>
@@ -31,6 +31,18 @@
       <div class="gradient-card gradient-card--forest reveal reveal--delay-3">
         <h3 class="gradient-card__title gradient-card__title--sm">Propósito</h3>
         <p class="gradient-card__desc">Cuidar los espacios donde las personas viven y trabajan, elevando los estándares de servicio con procesos eficientes, formación continua e innovación aplicada.</p>
+      </div>
+      <div class="gradient-card gradient-card--steel reveal reveal--delay-4">
+        <h3 class="gradient-card__title gradient-card__title--sm">SIG</h3>
+        <p class="gradient-card__desc">Consulta y descarga nuestra Política del Sistema Integrado de Gestión (SIG).</p>
+        <a href="../images/PO-ALD-001.pdf" class="gradient-card__pdf-link" target="_blank" rel="noopener noreferrer" aria-label="Descargar Política del Sistema Integrado de Gestión (PDF)">
+          <svg class="gradient-card__pdf-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="56" height="56" aria-hidden="true" focusable="false">
+            <path fill="#fff" d="M10 4h20l10 10v30a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+            <path fill="rgba(0,0,0,.18)" d="M30 4l10 10H32a2 2 0 0 1-2-2V4z"/>
+            <rect x="8" y="28" width="32" height="14" rx="2" fill="#E53935"/>
+            <text x="24" y="38.5" text-anchor="middle" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="0.5">PDF</text>
+          </svg>
+        </a>
       </div>
     </div>
 

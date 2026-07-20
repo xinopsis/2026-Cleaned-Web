@@ -271,11 +271,46 @@ $eSite   = htmlspecialchars($siteName,        ENT_QUOTES, 'UTF-8');
               Servicios <span class="arrow" aria-hidden="true">▾</span>
             </a>
             <div class="nav__megamenu" role="menu" aria-label="Submenú Servicios">
-              <div class="nav__megamenu-item" role="none"><a href="<?= $assetsPrefix ?>servicios/limpieza.php" role="menuitem">Limpieza Corporativa</a></div>
-              <div class="nav__megamenu-item" role="none"><a href="<?= $assetsPrefix ?>servicios/ingenieria-mantenimiento.php" role="menuitem">Facility Management</a></div>
-              <div class="nav__megamenu-item" role="none"><a href="<?= $assetsPrefix ?>servicios/auxiliares.php" role="menuitem">Servicios Generales</a></div>
-              <div class="nav__megamenu-item" role="none"><a href="<?= $assetsPrefix ?>servicios/medio-ambiente.php" role="menuitem">Saneamiento Ambiental</a></div>
-              <div class="nav__megamenu-item" role="none"><a href="<?= $assetsPrefix ?>servicios/aeroportuarios.php" role="menuitem">Servicios Aeroportuarios</a></div>
+              <!-- Bloque 1: Servicios principales -->
+              <div class="nav__megamenu-col">
+                <p class="nav__megamenu-title">Servicios</p>
+                <div class="nav__megamenu-item" role="none"><a href="<?= $assetsPrefix ?>servicios/limpieza.php" role="menuitem">Limpieza Corporativa</a></div>
+                <div class="nav__megamenu-item" role="none"><a href="<?= $assetsPrefix ?>servicios/ingenieria-mantenimiento.php" role="menuitem">Facility Management</a></div>
+                <div class="nav__megamenu-item" role="none"><a href="<?= $assetsPrefix ?>servicios/auxiliares.php" role="menuitem">Servicios Generales</a></div>
+                <div class="nav__megamenu-item" role="none"><a href="<?= $assetsPrefix ?>servicios/medio-ambiente.php" role="menuitem">Saneamiento Ambiental</a></div>
+              </div>
+
+              <!-- Bloque 2: Cleaned Airport Services -->
+              <div class="nav__megamenu-col nav__megamenu-col--brand">
+                <a href="<?= $assetsPrefix ?>servicios/aeroportuarios.php" class="nav__megamenu-brand" role="menuitem">
+                  <img
+                    src="<?= $assetsPrefix ?>images/logo_CAS.jpg"
+                    alt="Cleaned Airport Services"
+                    class="nav__megamenu-brand-logo"
+                    width="180"
+                    height="63"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="nav__megamenu-brand-label">Servicios Aeroportuarios</span>
+                </a>
+              </div>
+
+              <!-- Bloque 3: Cleaned Premium Services -->
+              <div class="nav__megamenu-col nav__megamenu-col--brand nav__megamenu-col--premium">
+                <a href="https://premium.cleaned.pe" class="nav__megamenu-brand nav__megamenu-brand--premium" role="menuitem" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src="<?= $assetsPrefix ?>images/logo-cleaned-premium.png"
+                    alt="Cleaned Premium Services"
+                    class="nav__megamenu-brand-logo nav__megamenu-brand-logo--premium"
+                    width="180"
+                    height="51"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="nav__megamenu-brand-label">Premium Services</span>
+                </a>
+              </div>
             </div>
           </li>
 

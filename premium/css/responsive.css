@@ -7,8 +7,7 @@
   .header-inner { padding: 0 32px; }
 
   .intro-text { padding: 72px 48px; }
-  .studio-media { padding-left: 48px; padding-right: 24px; }
-  .studio-text { padding: 0 48px 0 32px; }
+  .studio-text { padding: 72px 48px; }
   .projects-quote { padding: 72px 48px; }
   .journal-section { padding: 80px 48px 88px; }
   .pillars-section { padding: 80px 48px; }
@@ -121,28 +120,29 @@
 
   .studio-section {
     min-height: auto;
-    padding: 56px 0;
-    gap: 40px;
   }
 
   .studio-media {
-    padding: 0 24px;
     order: 1;
+    min-height: 48vw;
+    max-height: 420px;
   }
 
   .studio-text {
-    padding: 0 24px;
+    padding: 56px 24px 64px;
     order: 2;
   }
 
   .studio-text p { max-width: none; }
 
   .projects-image {
+    order: 1;
     min-height: 48vw;
     max-height: 420px;
   }
 
   .projects-quote {
+    order: 2;
     padding: 56px 24px 64px;
   }
 
@@ -208,9 +208,7 @@
   .intro-text { padding: 48px 20px 56px; }
   .intro-text h1 { font-size: clamp(24px, 7vw, 32px); }
 
-  .studio-section { padding: 48px 0; }
-  .studio-media,
-  .studio-text { padding: 0 20px; }
+  .studio-text { padding: 48px 20px 56px; }
 
   .projects-quote { padding: 48px 20px 56px; }
 

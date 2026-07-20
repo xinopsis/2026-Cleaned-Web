@@ -21,6 +21,32 @@
     <categoria slug="gestion-operativa" label="Gestión operativa" />
   </categorias>
 
+  <articulo slug="lanzamiento-cleaned-premium">
+    <title>Cleaned Premium: la excelencia de Cleaned Services asciende a un nuevo nivel de exclusividad</title>
+    <metaTitle>Lanzamiento Cleaned Premium | Cleaned Services</metaTitle>
+    <metaDescription>Cleaned Services lanza Cleaned Premium: división de alta gama para oficinas ejecutivas, residencias exclusivas y espacios VIP, con personal de excelencia y protocolos a medida.</metaDescription>
+    <keyword>Cleaned Premium limpieza de alta gama</keyword>
+    <category>empresa</category>
+    <date>2026-07-17</date>
+    <excerpt>Nueva división de atención de alto nivel para oficinas ejecutivas, espacios de representación y residencias exclusivas: discreción, protocolos a medida y experiencia de confianza integral.</excerpt>
+    <image>images/articles/cleaned_premium2.webp</image>
+    <imageGradient>linear-gradient(135deg,#004aac,#0f3460)</imageGradient>
+    <featured>true</featured>
+  </articulo>
+
+  <articulo slug="politica-sistema-integrado-gestion-sig">
+    <title>Política del Sistema Integrado de Gestión (SIG): el compromiso que ordena calidad, seguridad y medio ambiente</title>
+    <metaTitle>Política del Sistema Integrado de Gestión (SIG) | Cleaned Services</metaTitle>
+    <metaDescription>Qué es la Política Integrada SIG de Cleaned (PO-ALD-001), qué compromisos incluye y por qué beneficia a las empresas que exigen calidad, SSOMA y cumplimiento en sus proveedores.</metaDescription>
+    <keyword>política sistema integrado de gestión SIG</keyword>
+    <category>cumplimiento</category>
+    <date>2026-07-09</date>
+    <excerpt>La Política Integrada SIG (PO-ALD-001) define el compromiso de Cleaned con calidad, seguridad y salud en el trabajo y medio ambiente, y aporta trazabilidad y confianza a clientes corporativos.</excerpt>
+    <image>images/articles/politica-SIG.jpg</image>
+    <imageGradient>linear-gradient(135deg,#004aac,#0f3460)</imageGradient>
+    <featured>true</featured>
+  </articulo>
+
   <articulo slug="certificaciones-iso-sistema-gestion-integrado">
     <title>El tridente de la excelencia corporativa: sinergia ISO 9001, ISO 14001 e ISO 45001</title>
     <metaTitle>Certificaciones ISO 9001, 14001 y 45001: Sistema de Gestión Integrado</metaTitle>

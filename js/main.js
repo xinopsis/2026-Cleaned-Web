@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Cerrar menú al hacer click en un enlace de hoja (sin submenú)
-    document.querySelectorAll('.nav__dropdown-item a, .nav__megamenu-item a').forEach(a => {
+    document.querySelectorAll('.nav__dropdown-item a, .nav__megamenu-item a, .nav__megamenu-brand').forEach(a => {
       a.addEventListener('click', closeNav);
     });
   }
